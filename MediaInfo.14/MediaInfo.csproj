@@ -8,13 +8,24 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>MediaInfo</PackageId>
+    <PackageId>Our.Community.MediaInfo</PackageId>
     <Product>MediaInfo</Product>
-    <Title>MediaInfo</Title>
-    <Description>...</Description>
+    <Version>14.0.1-rc001</Version>
+    <Title>Media Info</Title>
+    <Description>A content app for umbraco which shows the File Info for your media items such as the GPS and Camera details</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageTags>umbraco plugin package</PackageTags>
   </PropertyGroup>
 
+	<ItemGroup>
+	  <None Update="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+    <None Include=".\icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>  
 
   <ItemGroup>
     <PackageReference Include="MetadataExtractor" Version="2.8.1" />
