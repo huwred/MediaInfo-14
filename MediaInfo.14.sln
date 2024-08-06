@@ -3,17 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInfo.14.Website", "MediaInfo.14.Website\MediaInfo.14.Website.csproj", "{2DDD4D98-1A28-43F0-9DDA-5CB6A8ECDB48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaInfo.14.Website", "MediaInfo.14.Website\MediaInfo.14.Website.csproj", "{2DDD4D98-1A28-43F0-9DDA-5CB6A8ECDB48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInfo.14", "MediaInfo.14\MediaInfo.14.csproj", "{A866B24E-A844-4486-AC90-414A4C2576CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaInfo", "MediaInfo.14\MediaInfo.csproj", "{A866B24E-A844-4486-AC90-414A4C2576CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2DDD4D98-1A28-43F0-9DDA-5CB6A8ECDB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +21,8 @@ Global
 		{A866B24E-A844-4486-AC90-414A4C2576CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A866B24E-A844-4486-AC90-414A4C2576CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A866B24E-A844-4486-AC90-414A4C2576CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

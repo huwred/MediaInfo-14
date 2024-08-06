@@ -1,23 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>MediaInfo._14</RootNamespace>
-    <StaticWebAssetBasePath>App_Plugins/MediaInfo._14</StaticWebAssetBasePath>
+    <RootNamespace>MediaInfo</RootNamespace>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>MediaInfo._14</PackageId>
-    <Product>MediaInfo._14</Product>
-    <Title>MediaInfo._14</Title>
+    <PackageId>MediaInfo</PackageId>
+    <Product>MediaInfo</Product>
+    <Title>MediaInfo</Title>
     <Description>...</Description>
     <PackageTags>umbraco plugin package</PackageTags>
   </PropertyGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="MetadataExtractor" Version="2.8.1" />
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="14.1.1" />
     <PackageReference Include="Umbraco.Cms.Web.Common" Version="14.1.1" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="14.0.0" />
   </ItemGroup>
 </Project>

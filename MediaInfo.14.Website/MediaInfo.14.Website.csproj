@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MediaInfo.14\MediaInfo.14.csproj" />
+    <ProjectReference Include="..\MediaInfo.14\MediaInfo.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

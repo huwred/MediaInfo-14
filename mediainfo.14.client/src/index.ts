@@ -1,12 +1,17 @@
 import { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
-export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+import { ManifestTypes } from '@umbraco-cms/backoffice/extension-registry';
 
-    console.log('Hello from MediaInfo.14');
+// load up the manifests here.
+import { manifests as entityActionManifests } from './actions/entity/manifest.ts';
+import { manifests as modalManifests } from './modal/manifest.ts';
 
-    // We can register many manifests at once via code 
-    // as opposed to a long umbraco-package.json file
-    // _extensionRegistry.registerMany([
-    //     ...entityActionManifests,
-    //     ...modalManifests
-    // ]);
+const manifests: Array<ManifestTypes> = [
+    ...entityActionManifests,
+    ...modalManifests
+];
+
+export const onInit: UmbEntryPointOnInit = (_host, extensionRegistry) => {
+    
+    // register them here. 
+    extensionRegistry.registerMany(manifests);
 };
