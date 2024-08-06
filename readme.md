@@ -2,4 +2,4 @@
 
 A content app for umbraco which shows the File Info for your media items such as the GPS and Camera details
 
-![image](https://github.com/huwred/MediaInfo/blob/master/images/preview.png?raw=true)
+![image](https://github.com/huwred/MediaInfo-14/blob/master/images/mediainfo.jpg?raw=true)
