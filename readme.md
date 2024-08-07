@@ -9,5 +9,9 @@ A content app for umbraco which displays the Exif Info from your media items suc
 ## OnSave ##
 
 The package can also be used to update some custom properties on the Media item. You need to add 2 text properties to the Image MediaType
-exifLocation
-exifCreatedDate
+* exifLocation
+* exifCreatedDate
+
+To enable this, you need to add
+.AddNotificationHandler<MediaSavingNotification, AddExifTagsFromImageHandler>()
+To your program.cs file
