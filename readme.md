@@ -13,5 +13,5 @@ The package can also be used to update some custom properties on the Media item.
 * exifCreatedDate
 
 To enable this, you need to add
-.AddNotificationHandler<MediaSavingNotification, AddExifTagsFromImageHandler>()
-To your program.cs file
+```.AddNotificationHandler<MediaSavingNotification, AddExifTagsFromImageHandler>()```
+to your program.cs file. When you now upload image files, if they contain GPS data and/or the original creation date, the properties will be updated.
