@@ -1,5 +1,9 @@
 ﻿﻿# Media Info
 
+## 14.0.1
+Fixed small issue when displaying error.
+
+## 14.0.0 
 A content app for umbraco which displays the Exif Info from your media items such as the GPS and Camera details
 
 ![image](https://raw.githubusercontent.com/huwred/MediaInfo-14/main/images/mediamenu.jpg?raw=true)
