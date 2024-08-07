@@ -10,7 +10,7 @@
   <PropertyGroup>
     <PackageId>Our.Community.MediaInfo</PackageId>
     <Product>MediaInfo</Product>
-    <Version>14.0.0</Version>
+    <Version>14.0.1</Version>
     <Title>Media Info</Title>
     <Description>A content app for umbraco which shows the File Info for your media items such as the GPS and Camera details</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

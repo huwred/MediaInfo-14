@@ -39,7 +39,8 @@ namespace MediaInfo.Controllers
             {
                 var imagefile = _umbracoHelper.Media(Guid.Parse(id));
                 if(imagefile == null) {
-                    return BadRequest($"MediaInfo: No image file {id}");
+                    _logger.LogError($"MediaInfo: Error no image file {id}");
+                    return Ok($"{{\"Metadata\":{{\"Directory\":[{{\"@Name\":\"MediaInfo\",\"Tag\":[{{\"@Id\":\"Error\",\"@Name\":\"No image file\",\"#text\":\"{id}\"}}]}}]}}}}");
                 }
                 var filePath = _webHostEnvironment.WebRootPath + imagefile.Url();
                 var fileInfo = _webHostEnvironment.WebRootFileProvider.GetFileInfo(imagefile.Url());
@@ -69,7 +70,7 @@ namespace MediaInfo.Controllers
             catch (Exception e)
             {
                 _logger.LogError(e,$"MediaInfo: Error loading Exif data from file {id}");
-                return BadRequest($"MediaInfo: Error loading Exif data from file {id}");
+                return Ok($"{{\"Metadata\":{{\"Directory\":[{{\"@Name\":\"MediaInfo\",\"Tag\":[{{\"@Id\":\"Error\",\"@Name\":\"Error\",\"#text\":\"{e.Message}\"}}]}}]}}}}");
             }
 
         }
@@ -104,13 +105,13 @@ namespace MediaInfo.Controllers
                 }
                 else
                 {
-                    return Ok($"MediaInfo: no filestream {apiInstruction}");
+                    return Ok($"{{\"Metadata\":{{\"Directory\":[{{\"@Name\":\"MediaInfo Azure\",\"Tag\":[{{\"@Id\":\"Error\",\"@Name\":\"No filestream\",\"#text\":\"{apiInstruction}\"}}]}}]}}}}");
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError(e,$"MediaInfo: Error loading Exif data from file {apiInstruction}");
-                return BadRequest($"MediaInfo: Error loading Exif data from file {apiInstruction}");
+                _logger.LogError(e,$"MediaInfo: Error loading Exif data from Azure file {apiInstruction}");
+                return Ok($"{{\"Metadata\":{{\"Directory\":[{{\"@Name\":\"MediaInfo Azure\",\"Tag\":[{{\"@Id\":\"Error\",\"@Name\":\"Error\",\"#text\":\"{e.Message}\"}}]}}]}}}}");
             }            
         }
     }
