@@ -1,0 +1,15 @@
+{
+  "$schema": "../umbraco-package-schema.json",
+  "name": "MediaInfo",
+  "id": "MediaInfo",
+  "version": "17.0.0",
+  "allowTelemetry": true,
+  "extensions": [
+    {
+      "name": "MediaInfo.entrypoint",
+      "alias": "MediaInfo.EntryPoint",
+      "type": "entryPoint",
+      "js": "/app_plugins/MediaInfo17/media-info-17.js"
+    }
+  ]
+}
