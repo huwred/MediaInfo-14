@@ -38,25 +38,22 @@ public class AddExifTagsFromImageHandler : INotificationHandler<MediaSavingNotif
             //Only process Images
             if (mediaItem.ContentType.Alias.Equals("Image"))
             {
-                if (!mediaItem.HasIdentity)
+                _logger.LogDebug($"Sending {mediaItem.Name} to GetExifData");
+                try
                 {
-                    _logger.LogDebug($"Sending {mediaItem.Name} to GetExifData");
-                    try
+                    Dictionary<string, string>? exIfTags = GetExifData(mediaItem);
+                    //loop through any properties where the alias starts with "exif"
+                    foreach (var exifProperty in mediaItem.Properties.Where(p => p.Alias.StartsWith("exif")))
                     {
-                        Dictionary<string, string>? exIfTags = GetExifData(mediaItem);
-                        //loop through any properties where the alias starts with "exif"
-                        foreach (var exifProperty in mediaItem.Properties.Where(p => p.Alias.StartsWith("exif")))
-                        {
-                            //if there is a matching exifTag set the exifProperty value
-                            if(exIfTags != null && exIfTags.ContainsKey(exifProperty.Alias)) {
-                                mediaItem.SetValue(exifProperty.Alias, exIfTags[exifProperty.Alias]); 
-                            }
+                        //if there is a matching exifTag set the exifProperty value
+                        if(exIfTags != null && exIfTags.ContainsKey(exifProperty.Alias)) {
+                            mediaItem.SetValue(exifProperty.Alias, exIfTags[exifProperty.Alias]); 
                         }
                     }
-                    catch (Exception e)
-                    {
-                        _logger.LogError(e,$"Error fetching Exif data");
-                    }
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(e,$"Error fetching Exif data");
                 }
             }
         }
